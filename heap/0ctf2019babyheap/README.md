@@ -4,6 +4,12 @@ Bug: Off by one nullbyte in edit function
 
 Other: Big malloc (0x1f000) at beginning
 
+Parameters:
+  - Calloc is used instead of malloc
+    - memory zeroed out
+    - doesnt use tcache
+  - Max 0xf chunks, max size 0x58
+
 Exploit:
   - Use nullbyte poisoning to reduce size of top chunk
     - When size top chunk < requested size, libc will call
