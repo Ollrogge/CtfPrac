@@ -1,0 +1,12 @@
+version: "2"
+services:
+    baby_spectre:
+        build: .
+        cpus: 4
+        cap_add:
+            - SYS_NICE
+        security_opt:
+            - seccomp:unconfined
+        ports:
+            - 1014:1024
+        restart: always
