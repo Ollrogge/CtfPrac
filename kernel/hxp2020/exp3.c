@@ -211,8 +211,6 @@ void build_rop(uint64_t *buf, size_t o)
 
 int main(void)
 {
-    save_state();
-
     int fd = open(DEV_PATH, O_RDWR);
 
     if (fd < 0) {
