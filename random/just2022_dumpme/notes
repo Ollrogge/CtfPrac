@@ -1,0 +1,4 @@
+you can ptrace the dumpme binary, hook the syscall to call prctl(PR_SET_DUMPABLE, 1), (allowing you to read memory) then use the auxiliary vectors to locate the elf header -> find the section with the flag
+
+
+https://gist.github.com/david942j/4c1f1e241fda34cb4e8e88236f03e663
