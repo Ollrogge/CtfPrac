@@ -1,0 +1,13 @@
+#!/bin/sh
+mdev -s
+mount -t proc none /proc
+stty -opost
+echo 2 > /proc/sys/kernel/kptr_restrict
+echo 1 > /proc/sys/kernel/dmesg_restrict
+
+echo -e "\nBoot took $(cut -d' ' -f1 /proc/uptime) seconds\n"
+echo "[ kone_gadget - SECCON CTF 2021 ]"
+setsid cttyhack setuidgid 1337 sh
+
+umount /proc
+poweroff -d 0 -f
