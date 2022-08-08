@@ -1,0 +1,21 @@
+
+msg_msg disabled with: CONFIG_SYSVIPC
+
+intended was struct cred
+
+6 bytes overwrite of cred struct
+  4 bytes `atomic_t usage`
+  2 bytes `kuid_t uid`
+    * works because uid generally under 65535
+
+yea although depends how you spray
+[2:44 AM]
+pql sprayed with setuid which is actually smarter
+[2:44 AM]
+I sprayed with clone with some special flags
+[2:44 AM]
+to lower noise
+[2:44 AM]
+if you just fork randomly and try to do it
+[2:44 AM]
+chances of it working are extremely low i think
