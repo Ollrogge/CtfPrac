@@ -369,3 +369,5 @@ int main(void) {
 
     return 0;
 }
+
+// mknod -m 666 /dev/kconcat c 337 0
