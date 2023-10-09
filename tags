@@ -80,6 +80,14 @@
 !_TAG_KIND_DESCRIPTION!Markdown	s,section	/sections/
 !_TAG_KIND_DESCRIPTION!Markdown	t,subsubsection	/level 3 sections/
 !_TAG_KIND_DESCRIPTION!Markdown	u,l5subsection	/level 5 sections/
+!_TAG_KIND_DESCRIPTION!PHP	a,alias	/aliases/
+!_TAG_KIND_DESCRIPTION!PHP	c,class	/classes/
+!_TAG_KIND_DESCRIPTION!PHP	d,define	/constant definitions/
+!_TAG_KIND_DESCRIPTION!PHP	f,function	/functions/
+!_TAG_KIND_DESCRIPTION!PHP	i,interface	/interfaces/
+!_TAG_KIND_DESCRIPTION!PHP	n,namespace	/namespaces/
+!_TAG_KIND_DESCRIPTION!PHP	t,trait	/traits/
+!_TAG_KIND_DESCRIPTION!PHP	v,variable	/variables/
 !_TAG_KIND_DESCRIPTION!Passwd	u,username	/user names/
 !_TAG_KIND_DESCRIPTION!Python	I,namespace	/name referring a module defined in other file/
 !_TAG_KIND_DESCRIPTION!Python	Y,unknown	/name referring a class\/variable\/function\/module defined in other module/
@@ -120,6 +128,7 @@
 !_TAG_PARSER_VERSION!Make	0.0	/current.age/
 !_TAG_PARSER_VERSION!Man	0.0	/current.age/
 !_TAG_PARSER_VERSION!Markdown	0.0	/current.age/
+!_TAG_PARSER_VERSION!PHP	0.0	/current.age/
 !_TAG_PARSER_VERSION!Passwd	0.0	/current.age/
 !_TAG_PARSER_VERSION!Python	0.0	/current.age/
 !_TAG_PARSER_VERSION!Rust	0.0	/current.age/
@@ -499,6 +508,7 @@ HOTROD_CREATE	kernel/cuctf2020/hotrod/exp.c	/^#define HOTROD_CREATE /;"	d	file:
 HOTROD_DELETE	kernel/cuctf2020/hotrod/exp.c	/^#define HOTROD_DELETE /;"	d	file:
 HOTROD_EDIT	kernel/cuctf2020/hotrod/exp.c	/^#define HOTROD_EDIT /;"	d	file:
 HOTROD_GET	kernel/cuctf2020/hotrod/exp.c	/^#define HOTROD_GET /;"	d	file:
+Helper	heap/rumble2023final/bhp/exp.php	/^class Helper {$/;"	c
 How to Solve	heap/0ctf2019babyheap/sol_pb.md	/^## How to Solve$/;"	s	chapter:"Baby" Heap 2019 - 0ctf Quals 2019
 INTERSECTS	random/just2022_dumpme/exp.c	/^#define INTERSECTS(/;"	d	file:
 INTERSECTS	random/just2022_dumpme/xocopy.c	/^#define INTERSECTS(/;"	d	file:
@@ -1305,6 +1315,7 @@ anonymousObject921fc9161005	heap/wacon2023/very_sorry/rename.js	/^        bd(a(0
 anonymousObject921fc9161105	heap/wacon2023/very_sorry/rename.js	/^        bd(a(1, {$/;"	v	function:anonymousFunction921fc9160f00
 anonymousObject921fc9161205	heap/wacon2023/very_sorry/rename.js	/^        bd(a(2, {$/;"	v	function:anonymousFunction921fc9160f00
 anonymousObject9b066e8d0105	browser/boa_defcon2022/pwn.js	/^  t.set("A", {a:{x:1},b:{x:1},c:{x:1}}, 1)$/;"	v
+anotherRef	heap/rumble2023final/bhp/exp.php	/^$anotherRef =$original;$/;"	v
 ao	heap/wacon2023/very_sorry/app.js	/^    function ao(a) {$/;"	f	function:anonymousFunction3aa9dd7f0300
 ao	heap/wacon2023/very_sorry/rename.js	/^    function ao(a) {$/;"	f	function:anonymousFunction921fc9160300
 ap	heap/wacon2023/very_sorry/app.js	/^    function ap(a) {$/;"	f
@@ -1657,6 +1668,10 @@ close	heap/wacon2023/very_sorry/app.js	/^    an.prototype.close = function () {$
 close	heap/wacon2023/very_sorry/rename.js	/^    S.prototype.close = function () {$/;"	m	class:S
 close	heap/wacon2023/very_sorry/rename.js	/^    aK.prototype.close = function () {$/;"	m	class:aK
 close	heap/wacon2023/very_sorry/rename.js	/^    an.prototype.close = function () {$/;"	m	class:an
+closure_handlers	heap/rumble2023final/bhp/exp.php	/^$closure_handlers = str2ptr($original, 0);$/;"	v
+closure_obj	heap/rumble2023final/bhp/exp.php	/^$closure_obj = str2ptr($original, 0x20);$/;"	v
+cmd	heap/rumble2023final/bhp/exp.php	/^$cmd = "\/flag_dispenser";$/;"	v
+cmd	heap/rumble2023final/bhp/exp.php	/^$cmd = "id";$/;"	v
 cmp_rdx_jne_pop2_ret	kernel/hxp2020/exp2.c	/^uint64_t cmp_rdx_jne_pop2_ret = 0xffffffff81964cc4;$/;"	v	typeref:typename:uint64_t
 cmp_rdx_jne_pop2_ret	kernel/hxp2020/exp3.c	/^uint64_t cmp_rdx_jne_pop2_ret = 0xffffffff81964cc4;$/;"	v	typeref:typename:uint64_t
 cnt	heap/just2022/exp.py	/^cnt = -1$/;"	v
@@ -1797,6 +1812,7 @@ cx	kernel/nullcon2022/eno_kernel/exp.c	/^	ulong ax; ulong cx; ulong dx; ulong si
 cx	kernel/nullcon2022/eno_kernel/exp2.c	/^	ulong ax; ulong cx; ulong dx; ulong si; ulong di;$/;"	m	struct:pt_regs	typeref:typename:ulong	file:
 cx	kernel/vulncon2021/ips/exp.c	/^	ulong ax; ulong cx; ulong dx; ulong si; ulong di;$/;"	m	struct:pt_regs	typeref:typename:ulong	file:
 d	browser/v8_line2021/exp.js	/^let d = [1.2];$/;"	v
+d	heap/rumble2023final/bhp/exp.php	/^    public $a, $b, $c, $d;$/;"	v	class:Helper
 d	heap/wacon2023/very_sorry/app.js	/^                d = {$/;"	v	function:anonymousFunction3aa9dd7f0300
 d	heap/wacon2023/very_sorry/app.js	/^    d.prototype.caml_custom = "_j";$/;"	c
 d	heap/wacon2023/very_sorry/app.js	/^    function d(a, b, c) {$/;"	f
@@ -1890,6 +1906,9 @@ data	cpu/ARESx/babyspectre/send.py	/^    data = f.read()$/;"	v
 data	cpu/pwn2win2021/baby-password/getflag.py	/^data = '''$/;"	v
 data	cpu/pwn2win2021/baby-password/getflag.py	/^data = data.split('\\n')$/;"	v
 data	cpu/pwn2win2021/baby-password/send.py	/^    data = f.read()$/;"	v
+data	heap/rumble2023final/bhp/req.py	/^    data = data.replace("<?php", "").replace("?>", "")$/;"	v
+data	heap/rumble2023final/bhp/req.py	/^    data = f.read()$/;"	v
+data	heap/rumble2023final/bhp/req.py	/^data = {"bhb": data}$/;"	v
 data	kernel/InCtf2021/kqueue/exp.c	/^    char *data;$/;"	m	struct:queue_entry	typeref:typename:char *	file:
 data	kernel/InCtf2021/kqueue/exp.c	/^    char* data;$/;"	m	struct:__anon22de067a0108	typeref:typename:char *	file:
 data	kernel/InCtf2021/kqueue/exp.c	/^    char* data;$/;"	m	struct:__anon22de067a0208	typeref:typename:char *	file:
@@ -2410,6 +2429,7 @@ f_ldw	browser/v8_line2021/exp.js	/^Number.prototype.f_ldw = function() {$/;"	m	c
 f_ldw	browser/v8_uiuctf2021/exp.js	/^Number.prototype.f_ldw = function() {$/;"	m	class:Number
 fa	heap/wacon2023/very_sorry/app.js	/^        fa = "%no",$/;"	v
 fa	heap/wacon2023/very_sorry/rename.js	/^        fa = "%no",$/;"	v
+fake_obj_offset	heap/rumble2023final/bhp/exp.php	/^$fake_obj_offset = 0x80;$/;"	v
 fake_tty	combi/google2021/kernel_exp/main.rs	/^struct fake_tty {$/;"	s
 fake_tty_t	kernel/InCtf2021/kqueue/exp.c	/^} fake_tty_t;$/;"	t	typeref:struct:__anon22de067a0308	file:
 fake_tty_t	kernel/TSJ2022/clipboard/exp.c	/^} fake_tty_t;$/;"	t	typeref:struct:__anon144101780208	file:
@@ -2634,6 +2654,8 @@ get	heap/wacon2023/very_sorry/app.js	/^                    get: b$/;"	p	variable
 get	heap/wacon2023/very_sorry/rename.js	/^                    get: b$/;"	p	variable:anonymousFunction921fc9160100.anonymousObject921fc9160205
 get	kernel/HTB/tictacpwn/exp.c	/^static void get(int fd, size_t idx, uint8_t* buf, size_t len)$/;"	f	typeref:typename:void	file:
 get	kernel/cuctf2020/hotrod/exp.c	/^static void get(int fd, uint8_t* data, size_t sz)$/;"	f	typeref:typename:void	file:
+get_basic_funcs	heap/rumble2023final/bhp/exp.php	/^function get_basic_funcs($base, $elf) {$/;"	f
+get_binary_base	heap/rumble2023final/bhp/exp.php	/^function get_binary_base($binary_leak) {$/;"	f
 get_cap_sys_admin	kernel/google2023/kconcat/exp.c	/^static void get_cap_sys_admin(int fd) $/;"	f	typeref:typename:void	file:
 get_connection	cpu/pwn2win2021/real-password/healthcheck/test.c	/^int get_connection()$/;"	f	typeref:typename:int
 get_hash_idx	kernel/dice2021/hashbrown_distributed.c	/^static uint32_t get_hash_idx(uint32_t key, uint32_t size)$/;"	f	typeref:typename:uint32_t	file:
@@ -2774,6 +2796,8 @@ i	cpu/ARESx/babyspectre/lottery.h	/^	size_t i;$/;"	m	struct:__anon511f3a5a0108	t
 i	cpu/ARESx/babyspectre/tmp/lottery.h	/^	size_t i;$/;"	m	struct:__anon62603d1a0108	typeref:typename:size_t
 i	cpu/pwn2win2021/baby-password/getflag.py	/^    i, avg = x$/;"	v
 i	cpu/pwn2win2021/baby-password/getflag.py	/^i = 0$/;"	v
+i	heap/rumble2023final/bhp/exp.php	/^for ($i = 0; $i < 65535; $i++) {$/;"	v
+i	heap/rumble2023final/bhp/exp.php	/^for($i = 0; $i < 0x110; $i += 8) {$/;"	v
 i	heap/wacon2023/very_sorry/app.js	/^    function i(a, b, c) {$/;"	f
 i	heap/wacon2023/very_sorry/rename.js	/^    function i(a, b, c) {$/;"	f
 i2	cpu/pwn2win2021/baby-password/getflag.py	/^    i2 = i >> 3$/;"	v
@@ -2974,6 +2998,7 @@ leak	heap/house_of_apple/exp.py	/^leak = u64(io.recv(8))$/;"	v
 leak	heap/insomnihack_2022_onetestament/exp.py	/^leak = io.recvline().replace(b"\\n",b"")$/;"	v
 leak	heap/insomnihack_2022_onetestament/exp.py	/^leak = leak.ljust(0x8, b"\\x00")$/;"	v
 leak	heap/insomnihack_2022_onetestament/exp.py	/^leak = u64(leak) - 0x3c4b78$/;"	v
+leak	heap/rumble2023final/bhp/exp.php	/^function leak($addr, $p = 0, $s = 8) {$/;"	f
 leak	heap/wacon2023/very_sorry/exp.py	/^leak = int(io.recvuntil(b"-")[:-1], 16) - 0x6000$/;"	v
 leak	heap_musl/n1ctf2021/xpl.py	/^def leak(idx):$/;"	f
 leak	kernel/google2021/exp.c	/^static uint64_t leak(int i) {$/;"	f	typeref:typename:uint64_t	file:
@@ -3241,6 +3266,7 @@ o	heap/wacon2023/very_sorry/app.js	/^    function o(a, b, c) {$/;"	f	function:an
 o	heap/wacon2023/very_sorry/rename.js	/^    function o(a, b, c) {$/;"	f	function:anonymousFunction921fc9160300
 o_tmp	browser/v8_line2021/exp.js	/^let o_tmp = {1: 'A'}$/;"	v
 o_tmp	browser/v8_uiuctf2021/exp.js	/^let o_tmp = {1: 'A'}$/;"	v
+obj	heap/rumble2023final/bhp/exp.php	/^$obj = new Helper();$/;"	v
 obj_arr	browser/v8_htb/rope2.js	/^var obj_arr = [temp_obj, temp_obj, temp_obj, temp_obj, temp_obj, temp_obj, temp_obj];$/;"	v
 obj_arr2	browser/v8_htb/rope2.js	/^var obj_arr2 = [temp_obj];$/;"	v
 obj_arr2_map	browser/v8_htb/rope2.js	/^var obj_arr2_map = obj_arr.GetLastElement();$/;"	v
@@ -3298,6 +3324,8 @@ orig_ax	kernel/kone_gadget/exp.c	/^	ulong orig_ax; ulong ip; ulong cs; ulong fla
 orig_ax	kernel/nullcon2022/eno_kernel/exp.c	/^	ulong orig_ax; ulong ip; ulong cs; ulong flags;$/;"	m	struct:pt_regs	typeref:typename:ulong	file:
 orig_ax	kernel/nullcon2022/eno_kernel/exp2.c	/^	ulong orig_ax; ulong ip; ulong cs; ulong flags;$/;"	m	struct:pt_regs	typeref:typename:ulong	file:
 orig_ax	kernel/vulncon2021/ips/exp.c	/^	ulong orig_ax; ulong ip; ulong cs; ulong flags;$/;"	m	struct:pt_regs	typeref:typename:ulong	file:
+original	heap/rumble2023final/bhp/exp.php	/^$original = str_repeat("A", 79);$/;"	v
+original_addr	heap/rumble2023final/bhp/exp.php	/^$original_addr = $php_heap - 0xc8-0x18;$/;"	v
 ostream	cpu/pwn2win2021/real-password/.vscode/settings.json	/^        "ostream": "cpp"$/;"	s	object:files.associations
 out	heap/wacon2023/very_sorry/app.js	/^                out: false,$/;"	p	variable:gm.c
 out	heap/wacon2023/very_sorry/app.js	/^                out: true,$/;"	p	variable:dj.c
@@ -3334,6 +3362,7 @@ p_vaddr	random/just2022_dumpme/xocopy.c	/^    Elf64_Addr p_vaddr;$/;"	m	struct:_
 pad_until	kernel/nullcon2022/eno_kernel/exp2.c	/^    size_t pad_until;$/;"	m	struct:__anonc6e680e60208	typeref:typename:size_t	file:
 page_size	kernel/TSJ2022/clipboard/exp.c	/^static unsigned page_size;$/;"	v	typeref:typename:unsigned	file:
 page_size	kernel/cuctf2020/hotrod/exp.c	/^static unsigned page_size;$/;"	v	typeref:typename:unsigned	file:
+parse_elf	heap/rumble2023final/bhp/exp.php	/^function parse_elf($base) {$/;"	f
 path	heap/wacon2023/very_sorry/app.js	/^                    path: c.path,$/;"	p	variable:anonymousFunction3aa9dd7f0300.d
 path	heap/wacon2023/very_sorry/app.js	/^                    path: f,$/;"	p	variable:anonymousFunction3aa9dd7f0300.c
 path	heap/wacon2023/very_sorry/app.js	/^        path: ba,$/;"	p	variable:anonymousFunction3aa9dd7f0300.anonymousObject3aa9dd7f0b05
@@ -3363,6 +3392,8 @@ payload6	random/balsn2023/babypwn2023/exp.py	/^payload6 = p64(e.got['puts'])$/;"
 payload7	random/balsn2023/babypwn2023/exp.py	/^payload7 = b"A"*0x28$/;"	v
 payload_nums	random/hxp2021/zehn/sol1.py	/^            payload_nums = [0x123456]$/;"	v
 perm	random/naham2023/exp.py	/^perm = 0x1 | 0x2 | 0x4$/;"	v
+php_base	heap/rumble2023final/bhp/exp.php	/^$php_base = leak($closure_handlers, 8) - 0x5b17a0;$/;"	v
+php_heap	heap/rumble2023final/bhp/exp.php	/^$php_heap = str2ptr($original, 0x58);$/;"	v
 pid	cpu/ARESx/babyspectre/lottery.c	/^int pid;$/;"	v	typeref:typename:int
 pid	cpu/ARESx/babyspectre/tmp/lottery.c	/^int pid;$/;"	v	typeref:typename:int
 pid	kernel/TSJ2022/clipboard/exp.c	/^    pid_t pid;$/;"	m	struct:__anon144101780108	typeref:typename:pid_t	file:
@@ -3489,6 +3520,7 @@ probe	cpu/ARESx/babyspectre/exp.c	/^uint64_t probe(uint8_t* addr)$/;"	f	typeref:
 probe	cpu/pwn2win2021/real-password/writeup/utils.h	/^unsigned long probe(char *adrs)$/;"	f	typeref:typename:unsigned long
 probe_no_flush	cpu/pwn2win2021/real-password/writeup/utils.h	/^unsigned long probe_no_flush(char *adrs)$/;"	f	typeref:typename:unsigned long
 proj	reversing/cscg2023/hurdles/my_solve.py	/^proj = angr.Project(".\/hurdles", auto_load_libs=False)$/;"	v
+props_off	heap/rumble2023final/bhp/exp.php	/^$props_off = 0x10;$/;"	v
 pseudo_sleep	cpu/ARESx/babyspectre/exp.c	/^void pseudo_sleep(int it)$/;"	f	typeref:typename:void
 pseudo_sleep	cpu/pwn2win2021/baby-password/exp.c	/^void pseudo_sleep(int it) {$/;"	f	typeref:typename:void
 pt_regs	kernel/ACSC2021/sysnote/exp.c	/^struct pt_regs {$/;"	s	file:
@@ -3510,6 +3542,7 @@ pt_regs	kernel/vulncon2021/ips/exp.c	/^struct pt_regs {$/;"	s	file:
 ptmx	kernel/bauhinia2023/exp.c	/^int ptmx[0x1000];$/;"	v	typeref:typename:int[0x1000]
 ptmx	kernel/cor2022/corjail/exp.c	/^int ptmx[0x1000];$/;"	v	typeref:typename:int[0x1000]
 ptmx	kernel/google2023/kconcat/exp.c	/^int ptmx[0x1000];$/;"	v	typeref:typename:int[0x1000]
+ptr2str	heap/rumble2023final/bhp/exp.php	/^function ptr2str($ptr, $m = 8) {$/;"	f
 ptrace_attach	random/naham2023/exp.py	/^def ptrace_attach(pid):$/;"	f
 ptrace_detach	random/naham2023/exp.py	/^def ptrace_detach(pid):$/;"	f
 ptrace_pokedata	random/naham2023/exp.py	/^def ptrace_pokedata(pid, addr, val):$/;"	f
@@ -3535,6 +3568,7 @@ queue_size	kernel/InCtf2021/kqueue/src/kqueue.h	/^    uint64_t queue_size; \/* T
 quit	heap_musl/n1ctf2021/xpl.py	/^def quit():$/;"	f
 r	cpu/ARESx/babyspectre/server.py	/^    r = sys.stdin.buffer.read(size)$/;"	v
 r	cpu/ARESx/babyspectre/tmp/server.py	/^    r = sys.stdin.buffer.read(size)$/;"	v
+r	heap/rumble2023final/bhp/req.py	/^r = requests.post("http:\/\/127.0.0.1:4444", data)$/;"	v
 r	heap/wacon2023/very_sorry/app.js	/^        function r(a) {$/;"	f	class:Z
 r	heap/wacon2023/very_sorry/app.js	/^    function r(a, b) {$/;"	f
 r	heap/wacon2023/very_sorry/rename.js	/^        function r(a) {$/;"	f	class:Z
@@ -4097,6 +4131,7 @@ stats_from_js	heap/wacon2023/very_sorry/app.js	/^    b.prototype.stats_from_js =
 stats_from_js	heap/wacon2023/very_sorry/rename.js	/^    b.prototype.stats_from_js = function (a) {$/;"	m	class:b
 stop	kernel/Seccon2021/kone_gadget/initramfs/etc/init.d/S01syslogd	/^stop() {$/;"	f
 stop	kernel/Seccon2021/kone_gadget/initramfs/etc/init.d/S02klogd	/^stop() {$/;"	f
+str2ptr	heap/rumble2023final/bhp/exp.php	/^function str2ptr(&$str, $p = 0, $s = 8) {$/;"	f
 strcpy_from_user	kernel/ACSC2021/sysnote/sysnote.c	/^long strcpy_from_user(char *dst, const char __user *src)$/;"	f	typeref:typename:long
 stream	heap/house_of_apple/exp.py	/^stream = io_file.construct($/;"	v
 stream	heap/house_of_apple/exp.py	/^stream = stream[0x10:]$/;"	v
@@ -4361,6 +4396,8 @@ valid_domainname_list	kernel/Seccon2021/kone_gadget/initramfs/lib64/dhcpcd/dhcpc
 validate	kernel/InCtf2021/kqueue/src/kqueue.h	/^static noinline void* validate(void *ptr){$/;"	f	typeref:typename:noinline void *
 value	kernel/dice2021/exp.c	/^    char *value;$/;"	m	struct:hash_entry	typeref:typename:char *	file:
 value	kernel/dice2021/hashbrown_distributed.c	/^    char *value;$/;"	m	struct:hash_entry	typeref:typename:char *	file:
+varName	heap/rumble2023final/bhp/exp.php	/^    $$varName = $original;  \/\/ Create dynamic variable referencing $original$/;"	v
+varName	heap/rumble2023final/bhp/exp.php	/^    $varName = "ref_" . $i;$/;"	v
 view	heap/0ctf2019babyheap/exp.py	/^def view(index):$/;"	f
 view	heap/just2022/exp.py	/^def view(idx):$/;"	f
 view	kernel/nullcon2022/eno_kernel/exp.c	/^static void view(int fd, unsigned idx, char* name, int* balance)$/;"	f	typeref:typename:void	file:
@@ -4400,6 +4437,7 @@ win	kernel/ACSC2021/sysnote/exp.c	/^void win(uint8_t* buf, uint64_t init_cred)$/
 write	browser/v8_uiuctf2021/exp.js	/^function write(addr, sc) {$/;"	f
 write	combi/google2021/kernel_exp/main.rs	/^fn write(f: &mut File, data: &Vec<u8>) {$/;"	f
 write	heap/house_of_apple/exp.py	/^def write(idx):$/;"	f
+write	heap/rumble2023final/bhp/exp.php	/^function write(&$str, $p, $v, $n = 8) {$/;"	f
 write	heap/wacon2023/very_sorry/app.js	/^    C.prototype.write = function (a, b, c, d) {$/;"	m	class:C
 write	heap/wacon2023/very_sorry/app.js	/^    S.prototype.write = function (a, b, c, d) {$/;"	m	class:S
 write	heap/wacon2023/very_sorry/app.js	/^    aK.prototype.write = function (a, b, c, d) {$/;"	m	class:aK
@@ -4439,3 +4477,4 @@ z	heap/wacon2023/very_sorry/app.js	/^    function z(a) {$/;"	f
 z	heap/wacon2023/very_sorry/rename.js	/^    function z(a) {$/;"	f
 zero	cpu/ARESx/babyspectre/lottery.c	/^const uint64_t zero = 0x99999997;$/;"	v	typeref:typename:const uint64_t
 zero	cpu/ARESx/babyspectre/tmp/lottery.c	/^const uint64_t zero = 0x99999997;$/;"	v	typeref:typename:const uint64_t
+zif_system	heap/rumble2023final/bhp/exp.php	/^$zif_system = $php_base + 0x441bb0;$/;"	v
