@@ -9,6 +9,7 @@
 !_TAG_FIELD_DESCRIPTION	pattern	/pattern/
 !_TAG_FIELD_DESCRIPTION	typeref	/Type and name of a variable or typedef/
 !_TAG_FIELD_DESCRIPTION!C++	name	/aliased names/
+!_TAG_FIELD_DESCRIPTION!LdScript	assignment	/how a value is assigned to the symbol/
 !_TAG_FIELD_DESCRIPTION!Passwd	home	/home directory/
 !_TAG_FIELD_DESCRIPTION!Passwd	shell	/login shell/
 !_TAG_FIELD_DESCRIPTION!Python	nameref	/the original name for the tag/
@@ -67,6 +68,10 @@
 !_TAG_KIND_DESCRIPTION!JavaScript	m,method	/methods/
 !_TAG_KIND_DESCRIPTION!JavaScript	p,property	/properties/
 !_TAG_KIND_DESCRIPTION!JavaScript	v,variable	/global variables/
+!_TAG_KIND_DESCRIPTION!LdScript	S,section	/sections/
+!_TAG_KIND_DESCRIPTION!LdScript	i,inputSection	/input sections/
+!_TAG_KIND_DESCRIPTION!LdScript	s,symbol	/symbols/
+!_TAG_KIND_DESCRIPTION!LdScript	v,version	/versions/
 !_TAG_KIND_DESCRIPTION!Make	I,makefile	/makefiles/
 !_TAG_KIND_DESCRIPTION!Make	m,macro	/macros/
 !_TAG_KIND_DESCRIPTION!Make	t,target	/targets/
@@ -76,6 +81,7 @@
 !_TAG_KIND_DESCRIPTION!Markdown	S,subsection	/level 2 sections/
 !_TAG_KIND_DESCRIPTION!Markdown	T,l4subsection	/level 4 sections/
 !_TAG_KIND_DESCRIPTION!Markdown	c,chapter	/chapters/
+!_TAG_KIND_DESCRIPTION!Markdown	h,hashtag	/hashtags/
 !_TAG_KIND_DESCRIPTION!Markdown	n,footnote	/footnotes/
 !_TAG_KIND_DESCRIPTION!Markdown	s,section	/sections/
 !_TAG_KIND_DESCRIPTION!Markdown	t,subsubsection	/level 3 sections/
@@ -118,16 +124,17 @@
 !_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
 !_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
 !_TAG_OUTPUT_VERSION	0.0	/current.age/
-!_TAG_PARSER_VERSION!C	0.0	/current.age/
-!_TAG_PARSER_VERSION!C++	0.0	/current.age/
+!_TAG_PARSER_VERSION!C	1.1	/current.age/
+!_TAG_PARSER_VERSION!C++	1.1	/current.age/
 !_TAG_PARSER_VERSION!Diff	0.0	/current.age/
 !_TAG_PARSER_VERSION!HTML	0.0	/current.age/
 !_TAG_PARSER_VERSION!Iniconf	0.0	/current.age/
 !_TAG_PARSER_VERSION!JSON	0.0	/current.age/
-!_TAG_PARSER_VERSION!JavaScript	0.0	/current.age/
+!_TAG_PARSER_VERSION!JavaScript	1.1	/current.age/
+!_TAG_PARSER_VERSION!LdScript	1.1	/current.age/
 !_TAG_PARSER_VERSION!Make	0.0	/current.age/
 !_TAG_PARSER_VERSION!Man	0.0	/current.age/
-!_TAG_PARSER_VERSION!Markdown	0.0	/current.age/
+!_TAG_PARSER_VERSION!Markdown	1.1	/current.age/
 !_TAG_PARSER_VERSION!PHP	0.0	/current.age/
 !_TAG_PARSER_VERSION!Passwd	0.0	/current.age/
 !_TAG_PARSER_VERSION!Python	0.0	/current.age/
@@ -139,16 +146,24 @@
 !_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
-!_TAG_PROGRAM_VERSION	6.0.0	/p6.0.20221218.0/
+!_TAG_PROGRAM_VERSION	6.1.0	/v6.1.0/
+!_TAG_ROLE_DESCRIPTION!C!function	foreigndecl	/declared in foreign languages/
 !_TAG_ROLE_DESCRIPTION!C!header	local	/local header/
 !_TAG_ROLE_DESCRIPTION!C!header	system	/system header/
 !_TAG_ROLE_DESCRIPTION!C!macro	undef	/undefined/
+!_TAG_ROLE_DESCRIPTION!C!struct	foreigndecl	/declared in foreign languages/
 !_TAG_ROLE_DESCRIPTION!C++!header	local	/local header/
 !_TAG_ROLE_DESCRIPTION!C++!header	system	/system header/
 !_TAG_ROLE_DESCRIPTION!C++!macro	undef	/undefined/
 !_TAG_ROLE_DESCRIPTION!HTML!class	attribute	/assigned as attributes/
 !_TAG_ROLE_DESCRIPTION!HTML!script	extFile	/referenced as external files/
 !_TAG_ROLE_DESCRIPTION!HTML!stylesheet	extFile	/referenced as external files/
+!_TAG_ROLE_DESCRIPTION!JavaScript!function	foreigndecl	/declared in foreign languages/
+!_TAG_ROLE_DESCRIPTION!LdScript!inputSection	destination	/specified as the destination of code and data/
+!_TAG_ROLE_DESCRIPTION!LdScript!inputSection	discarded	/discarded when linking/
+!_TAG_ROLE_DESCRIPTION!LdScript!inputSection	mapped	/mapped to output section/
+!_TAG_ROLE_DESCRIPTION!LdScript!symbol	aliased	/aliased with __attribute__((alias(...))) in C\/C++ code/
+!_TAG_ROLE_DESCRIPTION!LdScript!symbol	entrypoint	/entry points/
 !_TAG_ROLE_DESCRIPTION!Make!makefile	included	/included/
 !_TAG_ROLE_DESCRIPTION!Make!makefile	optional	/optionally included/
 !_TAG_ROLE_DESCRIPTION!Python!module	imported	/imported modules/
@@ -214,6 +229,11 @@
 -8,19 +8,26	browser/boa_defcon2022/constricted.patch	/^@@ -8,19 +8,26 @@ use super::{InternalObjectMethods, ORDINARY_INTERNAL_METHODS};$/;"	h	modifiedFile:a/boa_engine/src/object/internal_methods/bound_function.rs
 -92,6 +92,7	browser/boa_defcon2022/constricted.patch	/^@@ -92,6 +92,7 @@ pub struct StandardConstructors {$/;"	h	modifiedFile:a/boa_engine/src/context/intrinsics.rs
 -946,6 +946,8	kernel/ACSC2021/sysnote/k.patch	/^@@ -946,6 +946,8 @@ struct task_struct {$/;"	h	modifiedFile:a/include/linux/sched.h
+.bss	random/0Ctf2023/nothing_is_true2/link.ld	/^.bss : { *(.bss) }$/;"	S
+.data_code32	random/0Ctf2023/nothing_is_true2/link.ld	/^.data_code32 : { *(.data_code32) }$/;"	S
+.data_code64	random/0Ctf2023/nothing_is_true2/link.ld	/^.data_code64 : { *(.data_code64) }$/;"	S
+.text32	random/0Ctf2023/nothing_is_true2/link.ld	/^.text32 : { *(.text32) }$/;"	S
+.text64	random/0Ctf2023/nothing_is_true2/link.ld	/^.text64 : { *(.text64) }$/;"	S
 0CTF 2019 babyheap challenge	heap/0ctf2019babyheap/README.md	/^## 0CTF 2019 babyheap challenge$/;"	s
 1	browser/v8_line2021/exp.js	/^let o_tmp = {1: 'A'}$/;"	p	variable:o_tmp
 1	browser/v8_uiuctf2021/exp.js	/^let o_tmp = {1: 'A'}$/;"	p	variable:o_tmp
@@ -382,6 +402,8 @@ ET_EXEC	random/just2022_dumpme/exp.c	/^#define ET_EXEC /;"	d	file:
 ET_EXEC	random/just2022_dumpme/xocopy.c	/^#define ET_EXEC /;"	d	file:
 EXISTS	kernel/dice2021/hashbrown_distributed.c	/^#define EXISTS /;"	d	file:
 EXPERIMENT_N	cpu/pwn2win2021/real-password/healthcheck/test.c	/^#define EXPERIMENT_N /;"	d	file:
+Ehdr32	random/0Ctf2023/nothing_is_true2/exp.py	/^class Ehdr32(Structure):$/;"	c
+Ehdr64	random/0Ctf2023/nothing_is_true2/exp.py	/^class Ehdr64(Structure):$/;"	c
 Elf64_Addr	random/just2022_dumpme/exp.c	/^typedef u_int64_t Elf64_Addr;$/;"	t	typeref:typename:u_int64_t	file:
 Elf64_Addr	random/just2022_dumpme/xocopy.c	/^typedef u_int64_t Elf64_Addr;$/;"	t	typeref:typename:u_int64_t	file:
 Elf64_Ehdr	random/just2022_dumpme/exp.c	/^} Elf64_Ehdr;$/;"	t	typeref:struct:__anonc330b4350108	file:
@@ -738,6 +760,7 @@ PT_LOAD	random/just2022_dumpme/exp.c	/^#define PT_LOAD /;"	d	file:
 PT_LOAD	random/just2022_dumpme/xocopy.c	/^#define PT_LOAD /;"	d	file:
 PT_NULL	random/just2022_dumpme/exp.c	/^#define PT_NULL /;"	d	file:
 PT_NULL	random/just2022_dumpme/xocopy.c	/^#define PT_NULL /;"	d	file:
+Phdr64	random/0Ctf2023/nothing_is_true2/exp.py	/^class Phdr64(Structure):$/;"	c
 ProtectString	kernel/Dragon2019/BabyKernel/solution/exploit/Exploit.cpp	/^BOOL ProtectString(HANDLE hDevice, PBYTE Buffer, ULONG BufferSize) {$/;"	f	typeref:typename:BOOL
 PsInitialSystemProcess_OFFSET	kernel/Dragon2019/BabyKernel/solution/exploit/Exploit.cpp	/^#define PsInitialSystemProcess_OFFSET /;"	d	file:
 Q	heap/wacon2023/very_sorry/app.js	/^    function Q(a, b) {$/;"	c
@@ -972,6 +995,9 @@ _compute_al	reversing/cscg2023/hurdles/author_solve.py	/^def _compute_al(state, 
 _compute_al	reversing/cscg2023/hurdles/my_solve.py	/^def _compute_al(state, idx):$/;"	f
 _concretize	reversing/cscg2023/hurdles/author_solve.py	/^    def _concretize(self, memory, addr, **kwargs):$/;"	m	class:ConstArraySimConcretizationStrategy
 _concretize	reversing/cscg2023/hurdles/my_solve.py	/^    def _concretize(self, memory, addr, **kwargs):$/;"	m	class:ConstArraySimConcretizationStrategy
+_fields_	random/0Ctf2023/nothing_is_true2/exp.py	/^    _fields_ = [$/;"	v	class:Ehdr32
+_fields_	random/0Ctf2023/nothing_is_true2/exp.py	/^    _fields_ = [$/;"	v	class:Ehdr64
+_fields_	random/0Ctf2023/nothing_is_true2/exp.py	/^    _fields_ = [$/;"	v	class:Phdr64
 _flag_out	reversing/cscg2023/hurdles/author_solve.py	/^    _flag_out = b""$/;"	v
 _i	heap/wacon2023/very_sorry/app.js	/^        _i: {$/;"	p	variable:db
 _i	heap/wacon2023/very_sorry/rename.js	/^        _i: {$/;"	p	variable:db
@@ -983,6 +1009,7 @@ _link	random/balsn2022/senitel/sol_intended.c	/^static int _link(char *oldpath, 
 _n	heap/wacon2023/very_sorry/app.js	/^        _n: {$/;"	p	variable:db
 _n	heap/wacon2023/very_sorry/rename.js	/^        _n: {$/;"	p	variable:db
 _open	random/balsn2022/senitel/sol_intended.c	/^static int _open(char *path, int flags, mode_t mode)$/;"	f	typeref:typename:int	file:
+_pack_	random/0Ctf2023/nothing_is_true2/exp.py	/^    _pack_ = 1  # Ensures no padding between fields$/;"	v	class:Ehdr32
 a	browser/boa_defcon2022/pwn.js	/^  t.set("A", {a:{x:1},b:{x:1},c:{x:1}}, 1)$/;"	p	variable:anonymousObject9b066e8d0105
 a	heap/0ctf2019babyheap/exp.py	/^    a = allocate(0x58)$/;"	v
 a	heap/0ctf2019babyheap/exp.py	/^a = allocate(0x58)$/;"	v
@@ -1184,120 +1211,120 @@ anonymousFunction3aa9dd7f0400	heap/wacon2023/very_sorry/app.js	/^    (function (
 anonymousFunction3aa9dd7f0800	heap/wacon2023/very_sorry/app.js	/^            readSync: function () {$/;"	f	method:v.opendir
 anonymousFunction3aa9dd7f0900	heap/wacon2023/very_sorry/app.js	/^            closeSync: function () {$/;"	f	method:v.opendir
 anonymousFunction3aa9dd7f0f00	heap/wacon2023/very_sorry/app.js	/^    (function () {$/;"	f
-anonymousFunction3aa9dd7f1700	heap/wacon2023/very_sorry/app.js	/^            c.on("uncaughtException", function (a, b) {$/;"	f	function:gv
-anonymousFunction3aa9dd7f1800	heap/wacon2023/very_sorry/app.js	/^            f.addEventListener("error", function (a) {$/;"	f	function:gv
-anonymousFunction3aa9dd7f1a00	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f	function:z
+anonymousFunction3aa9dd7f1300	heap/wacon2023/very_sorry/app.js	/^            c.on("uncaughtException", function (a, b) {$/;"	f	function:gv
+anonymousFunction3aa9dd7f1400	heap/wacon2023/very_sorry/app.js	/^            f.addEventListener("error", function (a) {$/;"	f	function:gv
+anonymousFunction3aa9dd7f1600	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f	function:z
+anonymousFunction3aa9dd7f1800	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
+anonymousFunction3aa9dd7f1a00	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f1c00	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f1e00	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f2000	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f2200	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f2400	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f2600	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
-anonymousFunction3aa9dd7f2800	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f2a00	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
+anonymousFunction3aa9dd7f2c00	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f2e00	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f3000	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
-anonymousFunction3aa9dd7f3200	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f3400	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
 anonymousFunction3aa9dd7f3800	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
-anonymousFunction3aa9dd7f3c00	heap/wacon2023/very_sorry/app.js	/^                    function (a) {$/;"	f
-anonymousFunction3aa9dd7f3d00	heap/wacon2023/very_sorry/app.js	/^            function (a) {$/;"	f
-anonymousFunction3aa9dd7f3e00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:aY
-anonymousFunction3aa9dd7f3f00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:aY
-anonymousFunction3aa9dd7f4000	heap/wacon2023/very_sorry/app.js	/^        return function (a, b) {$/;"	f	function:aY
-anonymousFunction3aa9dd7f4100	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bk
-anonymousFunction3aa9dd7f4200	heap/wacon2023/very_sorry/app.js	/^        return function (a, b) {$/;"	f	function:bk
-anonymousFunction3aa9dd7f4300	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f4400	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f4500	heap/wacon2023/very_sorry/app.js	/^                return bk(f, e, O, P, function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f4600	heap/wacon2023/very_sorry/app.js	/^                    return function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f4700	heap/wacon2023/very_sorry/app.js	/^                    return function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f4800	heap/wacon2023/very_sorry/app.js	/^                return function (a, b) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f3900	heap/wacon2023/very_sorry/app.js	/^            function (a) {$/;"	f
+anonymousFunction3aa9dd7f3a00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:aY
+anonymousFunction3aa9dd7f3b00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:aY
+anonymousFunction3aa9dd7f3c00	heap/wacon2023/very_sorry/app.js	/^        return function (a, b) {$/;"	f	function:aY
+anonymousFunction3aa9dd7f3d00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bk
+anonymousFunction3aa9dd7f3e00	heap/wacon2023/very_sorry/app.js	/^        return function (a, b) {$/;"	f	function:bk
+anonymousFunction3aa9dd7f3f00	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4000	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4100	heap/wacon2023/very_sorry/app.js	/^                return bk(f, e, O, P, function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4200	heap/wacon2023/very_sorry/app.js	/^                    return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4300	heap/wacon2023/very_sorry/app.js	/^                    return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4400	heap/wacon2023/very_sorry/app.js	/^                return function (a, b) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4500	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4600	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4700	heap/wacon2023/very_sorry/app.js	/^                return function (c, b) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4800	heap/wacon2023/very_sorry/app.js	/^                            function (a) {$/;"	f	function:aG.anonymousFunction3aa9dd7f4700
 anonymousFunction3aa9dd7f4900	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f4a00	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f4b00	heap/wacon2023/very_sorry/app.js	/^                return function (c, b) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f4c00	heap/wacon2023/very_sorry/app.js	/^                            function (a) {$/;"	f	function:aG.anonymousFunction3aa9dd7f4b00
-anonymousFunction3aa9dd7f4d00	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f4f00	heap/wacon2023/very_sorry/app.js	/^                            return function (a) {$/;"	f	function:aG.f
-anonymousFunction3aa9dd7f5100	heap/wacon2023/very_sorry/app.js	/^                        return function (a) {$/;"	f	function:aG.f
-anonymousFunction3aa9dd7f5200	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f5300	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction3aa9dd7f5400	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4b00	heap/wacon2023/very_sorry/app.js	/^                            return function (a) {$/;"	f	function:aG.f
+anonymousFunction3aa9dd7f4d00	heap/wacon2023/very_sorry/app.js	/^                        return function (a) {$/;"	f	function:aG.f
+anonymousFunction3aa9dd7f4e00	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f4f00	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f5000	heap/wacon2023/very_sorry/app.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction3aa9dd7f5100	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
+anonymousFunction3aa9dd7f5200	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
+anonymousFunction3aa9dd7f5300	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
+anonymousFunction3aa9dd7f5400	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction3aa9dd7f5500	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction3aa9dd7f5600	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction3aa9dd7f5700	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction3aa9dd7f5800	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction3aa9dd7f5900	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction3aa9dd7f5a00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction3aa9dd7f5b00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
+anonymousFunction3aa9dd7f5b00	heap/wacon2023/very_sorry/app.js	/^            return function (a, b) {$/;"	f	function:bq
 anonymousFunction3aa9dd7f5c00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction3aa9dd7f5d00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction3aa9dd7f5e00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction3aa9dd7f5f00	heap/wacon2023/very_sorry/app.js	/^            return function (a, b) {$/;"	f	function:bq
-anonymousFunction3aa9dd7f6000	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction3aa9dd7f6100	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction3aa9dd7f6200	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bp
-anonymousFunction3aa9dd7f6300	heap/wacon2023/very_sorry/app.js	/^            function (a) {$/;"	f	function:aE
+anonymousFunction3aa9dd7f5e00	heap/wacon2023/very_sorry/app.js	/^            return function (a) {$/;"	f	function:bp
+anonymousFunction3aa9dd7f5f00	heap/wacon2023/very_sorry/app.js	/^            function (a) {$/;"	f	function:aE
 anonymousFunction921fc9160100	heap/wacon2023/very_sorry/rename.js	/^(function (a) {$/;"	f
 anonymousFunction921fc9160300	heap/wacon2023/very_sorry/rename.js	/^(function (f) {$/;"	f
 anonymousFunction921fc9160400	heap/wacon2023/very_sorry/rename.js	/^    (function () {$/;"	f	function:anonymousFunction921fc9160300
 anonymousFunction921fc9160800	heap/wacon2023/very_sorry/rename.js	/^            readSync: function () {$/;"	f	method:v.opendir
 anonymousFunction921fc9160900	heap/wacon2023/very_sorry/rename.js	/^            closeSync: function () {$/;"	f	method:v.opendir
 anonymousFunction921fc9160f00	heap/wacon2023/very_sorry/rename.js	/^    (function () {$/;"	f
-anonymousFunction921fc9161700	heap/wacon2023/very_sorry/rename.js	/^            c.on("uncaughtException", function (a, b) {$/;"	f	function:gv
-anonymousFunction921fc9161800	heap/wacon2023/very_sorry/rename.js	/^            f.addEventListener("error", function (a) {$/;"	f	function:gv
-anonymousFunction921fc9161a00	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f	function:z
+anonymousFunction921fc9161300	heap/wacon2023/very_sorry/rename.js	/^            c.on("uncaughtException", function (a, b) {$/;"	f	function:gv
+anonymousFunction921fc9161400	heap/wacon2023/very_sorry/rename.js	/^            f.addEventListener("error", function (a) {$/;"	f	function:gv
+anonymousFunction921fc9161600	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f	function:z
+anonymousFunction921fc9161800	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
+anonymousFunction921fc9161a00	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9161c00	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9161e00	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9162000	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9162200	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9162400	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9162600	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
-anonymousFunction921fc9162800	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9162a00	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
+anonymousFunction921fc9162c00	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9162e00	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9163000	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
-anonymousFunction921fc9163200	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9163400	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
 anonymousFunction921fc9163800	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
-anonymousFunction921fc9163c00	heap/wacon2023/very_sorry/rename.js	/^                    function (a) {$/;"	f
-anonymousFunction921fc9163d00	heap/wacon2023/very_sorry/rename.js	/^            function (a) {$/;"	f
-anonymousFunction921fc9163e00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:aY
-anonymousFunction921fc9163f00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:aY
-anonymousFunction921fc9164000	heap/wacon2023/very_sorry/rename.js	/^        return function (a, b) {$/;"	f	function:aY
-anonymousFunction921fc9164100	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bk
-anonymousFunction921fc9164200	heap/wacon2023/very_sorry/rename.js	/^        return function (a, b) {$/;"	f	function:bk
-anonymousFunction921fc9164300	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction921fc9164400	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction921fc9164500	heap/wacon2023/very_sorry/rename.js	/^                return bk(f, e, O, P, function (a) {$/;"	f	function:aG
-anonymousFunction921fc9164600	heap/wacon2023/very_sorry/rename.js	/^                    return function (a) {$/;"	f	function:aG
-anonymousFunction921fc9164700	heap/wacon2023/very_sorry/rename.js	/^                    return function (a) {$/;"	f	function:aG
-anonymousFunction921fc9164800	heap/wacon2023/very_sorry/rename.js	/^                return function (a, b) {$/;"	f	function:aG
+anonymousFunction921fc9163900	heap/wacon2023/very_sorry/rename.js	/^            function (a) {$/;"	f
+anonymousFunction921fc9163a00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:aY
+anonymousFunction921fc9163b00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:aY
+anonymousFunction921fc9163c00	heap/wacon2023/very_sorry/rename.js	/^        return function (a, b) {$/;"	f	function:aY
+anonymousFunction921fc9163d00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bk
+anonymousFunction921fc9163e00	heap/wacon2023/very_sorry/rename.js	/^        return function (a, b) {$/;"	f	function:bk
+anonymousFunction921fc9163f00	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9164000	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9164100	heap/wacon2023/very_sorry/rename.js	/^                return bk(f, e, O, P, function (a) {$/;"	f	function:aG
+anonymousFunction921fc9164200	heap/wacon2023/very_sorry/rename.js	/^                    return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9164300	heap/wacon2023/very_sorry/rename.js	/^                    return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9164400	heap/wacon2023/very_sorry/rename.js	/^                return function (a, b) {$/;"	f	function:aG
+anonymousFunction921fc9164500	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9164600	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9164700	heap/wacon2023/very_sorry/rename.js	/^                return function (c, b) {$/;"	f	function:aG
+anonymousFunction921fc9164800	heap/wacon2023/very_sorry/rename.js	/^                            function (a) {$/;"	f	function:aG.anonymousFunction921fc9164700
 anonymousFunction921fc9164900	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction921fc9164a00	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction921fc9164b00	heap/wacon2023/very_sorry/rename.js	/^                return function (c, b) {$/;"	f	function:aG
-anonymousFunction921fc9164c00	heap/wacon2023/very_sorry/rename.js	/^                            function (a) {$/;"	f	function:aG.anonymousFunction921fc9164b00
-anonymousFunction921fc9164d00	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction921fc9164f00	heap/wacon2023/very_sorry/rename.js	/^                            return function (a) {$/;"	f	function:aG.f
-anonymousFunction921fc9165100	heap/wacon2023/very_sorry/rename.js	/^                        return function (a) {$/;"	f	function:aG.f
-anonymousFunction921fc9165200	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction921fc9165300	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
-anonymousFunction921fc9165400	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9164b00	heap/wacon2023/very_sorry/rename.js	/^                            return function (a) {$/;"	f	function:aG.f
+anonymousFunction921fc9164d00	heap/wacon2023/very_sorry/rename.js	/^                        return function (a) {$/;"	f	function:aG.f
+anonymousFunction921fc9164e00	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9164f00	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9165000	heap/wacon2023/very_sorry/rename.js	/^                return function (a) {$/;"	f	function:aG
+anonymousFunction921fc9165100	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
+anonymousFunction921fc9165200	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
+anonymousFunction921fc9165300	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
+anonymousFunction921fc9165400	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction921fc9165500	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction921fc9165600	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction921fc9165700	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction921fc9165800	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction921fc9165900	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction921fc9165a00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction921fc9165b00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
+anonymousFunction921fc9165b00	heap/wacon2023/very_sorry/rename.js	/^            return function (a, b) {$/;"	f	function:bq
 anonymousFunction921fc9165c00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
 anonymousFunction921fc9165d00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction921fc9165e00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction921fc9165f00	heap/wacon2023/very_sorry/rename.js	/^            return function (a, b) {$/;"	f	function:bq
-anonymousFunction921fc9166000	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction921fc9166100	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bq
-anonymousFunction921fc9166200	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bp
-anonymousFunction921fc9166300	heap/wacon2023/very_sorry/rename.js	/^            function (a) {$/;"	f	function:aE
+anonymousFunction921fc9165e00	heap/wacon2023/very_sorry/rename.js	/^            return function (a) {$/;"	f	function:bp
+anonymousFunction921fc9165f00	heap/wacon2023/very_sorry/rename.js	/^            function (a) {$/;"	f	function:aE
 anonymousObject3aa9dd7f0205	heap/wacon2023/very_sorry/app.js	/^            (a.defineProperty(a.prototype, "_T_", {$/;"	v	function:anonymousFunction3aa9dd7f0100
 anonymousObject3aa9dd7f0a05	heap/wacon2023/very_sorry/app.js	/^            this.fs.mkdirSync(this.nm(a), {$/;"	v
 anonymousObject3aa9dd7f0b05	heap/wacon2023/very_sorry/app.js	/^    if (aS()) aA.push({$/;"	v	function:anonymousFunction3aa9dd7f0300
@@ -1346,6 +1373,8 @@ argv	heap/insomnihack_2022_onetestament/exp.py	/^argv = []$/;"	v
 argv	heap/just2022/exp.py	/^argv = []$/;"	v
 argv	heap/wacon2023/very_sorry/exp.py	/^argv = []$/;"	v
 argv	kernel/zeropts2022/krce/exp.py	/^argv = []$/;"	v
+argv	random/0Ctf2023/nothing_is_true2/exp.py	/^    argv = ['exp']$/;"	v
+argv	random/0Ctf2023/nothing_is_true2/exp.py	/^    argv = ['wrapper.py']$/;"	v
 argv	random/balsn2022/senitel/exp.py	/^argv = []$/;"	v
 argv	random/balsn2023/babypwn2023/exp.py	/^argv = []$/;"	v
 argv	random/just2022_arm/exp.py	/^argv = ['-L', '.', 'cli']$/;"	v
@@ -1647,9 +1676,12 @@ change_file	kernel/Seccon2021/kone_gadget/initramfs/lib/dhcpcd/dhcpcd-run-hooks	
 change_file	kernel/Seccon2021/kone_gadget/initramfs/lib64/dhcpcd/dhcpcd-run-hooks	/^change_file()$/;"	f
 check	cpu/pwn2win2021/real-password/healthcheck/test.c	/^static inline void check(const char *thing)$/;"	f	typeref:typename:void	file:
 checkResults	cpu/pwn2win2021/real-password/writeup/testeEficiency.c	/^void checkResults(char *flushAux,int opt){$/;"	f	typeref:typename:void
+check_bytes	random/0Ctf2023/nothing_is_true2/wrapper.py	/^def check_bytes(data, b):$/;"	f
+check_elf	random/0Ctf2023/nothing_is_true2/wrapper.py	/^def check_elf(data):$/;"	f
 check_fgets	cpu/ARESx/babyspectre/lottery.c	/^#define check_fgets(/;"	d	file:
 check_fgets	cpu/ARESx/babyspectre/tmp/lottery.c	/^#define check_fgets(/;"	d	file:
 check_file_size	kernel/Seccon2021/kone_gadget/initramfs/etc/init.d/S20urandom	/^check_file_size() {$/;"	f
+check_segments	random/0Ctf2023/nothing_is_true2/wrapper.py	/^def check_segments(elf):$/;"	f
 check_vmlinux	kernel/kone_gadget/extract-vmlinux	/^check_vmlinux()$/;"	f
 checkcmd	cpu/pwn2win2021/real-password/healthcheck/cronjob.py	/^checkcmd="""sudo ps -aux | grep .\/server"""$/;"	v
 chrono	cpu/ARESx/babyspectre/.vscode/settings.json	/^        "chrono": "c",$/;"	s	object:files.associations
@@ -2259,6 +2291,7 @@ env	heap/insomnihack_2022_onetestament/exp.py	/^env = {'LD_PRELOAD':'.\/libc.so.
 env	heap/just2022/exp.py	/^env = {'LD_PRELOAD':'.\/libc-2.31.so'}$/;"	v
 env	heap/wacon2023/very_sorry/exp.py	/^env = {}$/;"	v
 env	kernel/zeropts2022/krce/exp.py	/^env = {}$/;"	v
+env	random/0Ctf2023/nothing_is_true2/exp.py	/^env = {}$/;"	v
 env	random/balsn2022/senitel/exp.py	/^env = {}$/;"	v
 env	random/balsn2023/babypwn2023/exp.py	/^env = {}$/;"	v
 env	random/just2022_arm/exp.py	/^env = {}$/;"	v
@@ -2325,6 +2358,8 @@ exe	heap/insomnihack_2022_onetestament/exp.py	/^exe = '.\/ontestament'$/;"	v
 exe	heap/just2022/exp.py	/^exe = '.\/notes'$/;"	v
 exe	heap/wacon2023/very_sorry/exp.py	/^exe = '.\/app'$/;"	v
 exe	kernel/zeropts2022/krce/exp.py	/^exe = '.\/start-qemu.sh'$/;"	v
+exe	random/0Ctf2023/nothing_is_true2/exp.py	/^    exe = '.\/launcher'$/;"	v
+exe	random/0Ctf2023/nothing_is_true2/exp.py	/^    exe = 'python3'$/;"	v
 exe	random/balsn2022/senitel/exp.py	/^exe = '.\/share\/guest_home\/sentinel'$/;"	v
 exe	random/balsn2023/babypwn2023/exp.py	/^exe = '.\/chall'$/;"	v
 exe	random/hxp2021/zehn/sol2.py	/^exe = ELF("vuln_patched")$/;"	v
@@ -2346,6 +2381,8 @@ exists	heap/wacon2023/very_sorry/rename.js	/^    v.prototype.exists = function (
 exists	kernel/InCtf2021/kqueue/src/kqueue.h	/^bool exists = false;$/;"	v	typeref:typename:bool
 exit_hashbrown	kernel/dice2021/hashbrown_distributed.c	/^static void __exit exit_hashbrown(void)$/;"	f	typeref:typename:void __exit	file:
 exit_kqueue	kernel/InCtf2021/kqueue/src/kqueue.c	/^static void __exit exit_kqueue(void){$/;"	f	typeref:typename:void __exit	file:
+exp	random/0Ctf2023/nothing_is_true2/exp.py	/^exp = bytearray(open("exp", "rb").read())$/;"	v
+exp	random/0Ctf2023/nothing_is_true2/exp.py	/^exp = magic + exp[len(magic):]$/;"	v
 exploit	browser/v8_uiuctf2021/exp.js	/^function exploit() {$/;"	f
 exploit	heap_musl/n1ctf2021/xpl.py	/^def exploit(r):$/;"	f
 exploit	kernel/hxp2020/exp1.c	/^void exploit(void)$/;"	f	typeref:typename:void
@@ -2643,6 +2680,7 @@ gdbscript	heap/insomnihack_2022_onetestament/exp.py	/^gdbscript = '''$/;"	v
 gdbscript	heap/just2022/exp.py	/^gdbscript = '''$/;"	v
 gdbscript	heap/wacon2023/very_sorry/exp.py	/^gdbscript = '''$/;"	v
 gdbscript	kernel/zeropts2022/krce/exp.py	/^gdbscript = '''$/;"	v
+gdbscript	random/0Ctf2023/nothing_is_true2/exp.py	/^gdbscript = '''$/;"	v
 gdbscript	random/balsn2022/senitel/exp.py	/^gdbscript = '''$/;"	v
 gdbscript	random/balsn2023/babypwn2023/exp.py	/^gdbscript = f'''$/;"	v
 gdbscript	random/just2022_arm/exp.py	/^gdbscript = '''$/;"	v
@@ -2651,7 +2689,11 @@ gdbscript	sandbox/Rwctf2022/exp.py	/^gdbscript = '''$/;"	v
 ge	heap/wacon2023/very_sorry/app.js	/^    function ge(a) {$/;"	f
 ge	heap/wacon2023/very_sorry/rename.js	/^    function ge(a) {$/;"	f
 get	heap/wacon2023/very_sorry/app.js	/^                    get: b$/;"	p	variable:anonymousFunction3aa9dd7f0100.anonymousObject3aa9dd7f0205
+get	heap/wacon2023/very_sorry/app.js	/^    ah.prototype.get = function (a) {$/;"	m	class:ah
+get	heap/wacon2023/very_sorry/app.js	/^    ax.prototype.get = function (a) {$/;"	m	class:ax
 get	heap/wacon2023/very_sorry/rename.js	/^                    get: b$/;"	p	variable:anonymousFunction921fc9160100.anonymousObject921fc9160205
+get	heap/wacon2023/very_sorry/rename.js	/^    ah.prototype.get = function (a) {$/;"	m	class:ah
+get	heap/wacon2023/very_sorry/rename.js	/^    ax.prototype.get = function (a) {$/;"	m	class:ax
 get	kernel/HTB/tictacpwn/exp.c	/^static void get(int fd, size_t idx, uint8_t* buf, size_t len)$/;"	f	typeref:typename:void	file:
 get	kernel/cuctf2020/hotrod/exp.c	/^static void get(int fd, uint8_t* data, size_t sz)$/;"	f	typeref:typename:void	file:
 get_basic_funcs	heap/rumble2023final/bhp/exp.php	/^function get_basic_funcs($base, $elf) {$/;"	f
@@ -2765,6 +2807,8 @@ hashmap	kernel/dice2021/hashbrown_distributed.c	/^hashmap_t hashmap;$/;"	v	typer
 hashmap_ioctl	kernel/dice2021/hashbrown_distributed.c	/^static long hashmap_ioctl(struct file *file, unsigned int cmd, unsigned long arg)$/;"	f	typeref:typename:long	file:
 hashmap_t	kernel/dice2021/hashbrown_distributed.c	/^}hashmap_t;$/;"	t	typeref:struct:__anonfb2b9ebd0208	file:
 hax	heap/0ctf2019babyheap/exp.py	/^hax = allocate(0x58)$/;"	v
+header_32	random/0Ctf2023/nothing_is_true2/exp.py	/^header_32 = Ehdr32.from_buffer(memoryview(exp))$/;"	v
+header_64	random/0Ctf2023/nothing_is_true2/exp.py	/^header_64 = Ehdr64.from_buffer(memoryview(exp))$/;"	v
 heap_base	heap/house_of_apple/exp.py	/^heap_base = u64(io.recv(8)) - 0xf80 - 0x440$/;"	v
 hex	browser/boa_defcon2022/pwn.js	/^  BigInt.prototype.hex = function() {$/;"	m	class:BigInt
 hex	browser/v8_htb/rope2.js	/^BigInt.prototype.hex = function() {$/;"	m	class:BigInt
@@ -2786,6 +2830,7 @@ host	heap/insomnihack_2022_onetestament/exp.py	/^host = args.HOST or '127.0.0.1'
 host	heap/just2022/exp.py	/^host = args.HOST or '127.0.0.1'$/;"	v
 host	heap/wacon2023/very_sorry/exp.py	/^host = args.HOST or '127.0.0.1'$/;"	v
 host	kernel/zeropts2022/krce/exp.py	/^host = args.HOST or '127.0.0.1'$/;"	v
+host	random/0Ctf2023/nothing_is_true2/exp.py	/^host = args.HOST or '127.0.0.1'$/;"	v
 host	random/balsn2022/senitel/exp.py	/^host = args.HOST or '127.0.0.1'$/;"	v
 host	random/balsn2023/babypwn2023/exp.py	/^host = args.HOST or '127.0.0.1'$/;"	v
 host	random/just2022_arm/exp.py	/^host = args.HOST or '127.0.0.1'$/;"	v
@@ -2870,6 +2915,7 @@ io	heap/insomnihack_2022_onetestament/exp.py	/^io = start(argv, env=env)$/;"	v
 io	heap/just2022/exp.py	/^io = start(argv, env=env)$/;"	v
 io	heap/wacon2023/very_sorry/exp.py	/^io = start(argv, env=env)$/;"	v
 io	kernel/zeropts2022/krce/exp.py	/^io = start(argv, env=env)$/;"	v
+io	random/0Ctf2023/nothing_is_true2/exp.py	/^io = start(argv, env=env)$/;"	v
 io	random/balsn2022/senitel/exp.py	/^io = start(argv, env=env)$/;"	v
 io	random/balsn2023/babypwn2023/exp.py	/^io = start(argv, env=env)$/;"	v
 io	random/just2022_arm/exp.py	/^io = start(argv, env=env)$/;"	v
@@ -3069,6 +3115,7 @@ local	heap/insomnihack_2022_onetestament/exp.py	/^def local(argv=[], *a, **kw):$
 local	heap/just2022/exp.py	/^def local(argv=[], *a, **kw):$/;"	f
 local	heap/wacon2023/very_sorry/exp.py	/^def local(argv=[], *a, **kw):$/;"	f
 local	kernel/zeropts2022/krce/exp.py	/^def local(argv=[], *a, **kw):$/;"	f
+local	random/0Ctf2023/nothing_is_true2/exp.py	/^def local(argv=[], *a, **kw):$/;"	f
 local	random/balsn2022/senitel/exp.py	/^def local(argv=[], *a, **kw):$/;"	f
 local	random/balsn2023/babypwn2023/exp.py	/^def local(argv=[], *a, **kw):$/;"	f
 local	random/just2022_arm/exp.py	/^def local(argv=[], *a, **kw):$/;"	f
@@ -3105,6 +3152,7 @@ m_type	kernel/vulncon2021/ips/exp.c	/^    long m_type;$/;"	m	struct:__anon1c82c3
 magic	combi/google2021/kernel_exp/main.rs	/^    magic: i32,$/;"	m	struct:fake_tty
 magic	kernel/InCtf2021/kqueue/exp.c	/^    int magic;$/;"	m	struct:__anon22de067a0308	typeref:typename:int	file:
 magic	kernel/TSJ2022/clipboard/exp.c	/^    int magic;$/;"	m	struct:__anon144101780208	typeref:typename:int	file:
+magic	random/0Ctf2023/nothing_is_true2/exp.py	/^magic = b'\\x7fELF\\x01\\x01\\x01' + b'\\x00'*9$/;"	v
 magic_gadget	heap/house_of_apple/exp.py	/^magic_gadget  =  libc.address + 0x16a1e0 + 0x1a$/;"	v
 magic_key	kernel/n1ctf2021/babyguess/pwn.c	/^char magic_key[256];$/;"	v	typeref:typename:char[256]
 mail	kernel/Seccon2021/kone_gadget/initramfs/etc/passwd	/^mail:x:8:8:mail:\/var\/spool\/mail:\/bin\/false$/;"	u	home:/var/spool/mail	shell:/bin/false
@@ -3151,6 +3199,7 @@ main	kernel/nullcon2022/eno_kernel/exp2.c	/^int main(void) $/;"	f	typeref:typena
 main	kernel/union2021/exp.c	/^int main (void)$/;"	f	typeref:typename:int
 main	kernel/vulncon2021/ips/exp.c	/^int main(void) {$/;"	f	typeref:typename:int
 main	kernel/zeropts2022/krce/src/interface.c	/^int main()$/;"	f	typeref:typename:int
+main	random/0Ctf2023/nothing_is_true2/wrapper.py	/^def main():$/;"	f
 main	random/balsn2022/senitel/sol_intended.c	/^int main(void)$/;"	f	typeref:typename:int
 main	random/balsn2022/senitel/sol_unintended.c	/^int main()$/;"	f	typeref:typename:int
 main	random/hxp2021/zehn/sol2.py	/^def main():$/;"	f
@@ -3392,6 +3441,7 @@ payload6	random/balsn2023/babypwn2023/exp.py	/^payload6 = p64(e.got['puts'])$/;"
 payload7	random/balsn2023/babypwn2023/exp.py	/^payload7 = b"A"*0x28$/;"	v
 payload_nums	random/hxp2021/zehn/sol1.py	/^            payload_nums = [0x123456]$/;"	v
 perm	random/naham2023/exp.py	/^perm = 0x1 | 0x2 | 0x4$/;"	v
+phdrs	random/0Ctf2023/nothing_is_true2/exp.py	/^phdrs = exp[0x40:0x40+sizeof(Phdr64)*4]$/;"	v
 php_base	heap/rumble2023final/bhp/exp.php	/^$php_base = leak($closure_handlers, 8) - 0x5b17a0;$/;"	v
 php_heap	heap/rumble2023final/bhp/exp.php	/^$php_heap = str2ptr($original, 0x58);$/;"	v
 pid	cpu/ARESx/babyspectre/lottery.c	/^int pid;$/;"	v	typeref:typename:int
@@ -3448,6 +3498,7 @@ port	heap/insomnihack_2022_onetestament/exp.py	/^port = int(args.PORT or 4000)$/
 port	heap/just2022/exp.py	/^port = int(args.PORT or 4000)$/;"	v
 port	heap/wacon2023/very_sorry/exp.py	/^port = int(args.PORT or 4000)$/;"	v
 port	kernel/zeropts2022/krce/exp.py	/^port = int(args.PORT or 4000)$/;"	v
+port	random/0Ctf2023/nothing_is_true2/exp.py	/^port = int(args.PORT or 4000)$/;"	v
 port	random/balsn2022/senitel/exp.py	/^port = int(args.PORT or 4000)$/;"	v
 port	random/balsn2023/babypwn2023/exp.py	/^port = int(args.PORT or 4000)$/;"	v
 port	random/just2022_arm/exp.py	/^port = int(args.PORT or 4000)$/;"	v
@@ -3520,6 +3571,7 @@ probe	cpu/ARESx/babyspectre/exp.c	/^uint64_t probe(uint8_t* addr)$/;"	f	typeref:
 probe	cpu/pwn2win2021/real-password/writeup/utils.h	/^unsigned long probe(char *adrs)$/;"	f	typeref:typename:unsigned long
 probe_no_flush	cpu/pwn2win2021/real-password/writeup/utils.h	/^unsigned long probe_no_flush(char *adrs)$/;"	f	typeref:typename:unsigned long
 proj	reversing/cscg2023/hurdles/my_solve.py	/^proj = angr.Project(".\/hurdles", auto_load_libs=False)$/;"	v
+proof_of_work	random/0Ctf2023/nothing_is_true2/wrapper.py	/^def proof_of_work(sec = 10):$/;"	f
 props_off	heap/rumble2023final/bhp/exp.php	/^$props_off = 0x10;$/;"	v
 pseudo_sleep	cpu/ARESx/babyspectre/exp.c	/^void pseudo_sleep(int it)$/;"	f	typeref:typename:void
 pseudo_sleep	cpu/pwn2win2021/baby-password/exp.c	/^void pseudo_sleep(int it) {$/;"	f	typeref:typename:void
@@ -3796,6 +3848,7 @@ remote	heap/insomnihack_2022_onetestament/exp.py	/^def remote(argv=[], *a, **kw)
 remote	heap/just2022/exp.py	/^def remote(argv=[], *a, **kw):$/;"	f
 remote	heap/wacon2023/very_sorry/exp.py	/^def remote(argv=[], *a, **kw):$/;"	f
 remote	kernel/zeropts2022/krce/exp.py	/^def remote(argv=[], *a, **kw):$/;"	f
+remote	random/0Ctf2023/nothing_is_true2/exp.py	/^def remote(argv=[], *a, **kw):$/;"	f
 remote	random/balsn2022/senitel/exp.py	/^def remote(argv=[], *a, **kw):$/;"	f
 remote	random/balsn2023/babypwn2023/exp.py	/^def remote(argv=[], *a, **kw):$/;"	f
 remote	random/just2022_arm/exp.py	/^def remote(argv=[], *a, **kw):$/;"	f
@@ -3807,6 +3860,7 @@ remove_markers	kernel/Seccon2021/kone_gadget/initramfs/lib64/dhcpcd/dhcpcd-run-h
 remove_storage	kernel/vulncon2021/ips/exp.c	/^static void remove_storage(int idx)$/;"	f	typeref:typename:void	file:
 rename	heap/wacon2023/very_sorry/app.js	/^    b.prototype.rename = function (a, b, c) {$/;"	m	class:b
 rename	heap/wacon2023/very_sorry/rename.js	/^    b.prototype.rename = function (a, b, c) {$/;"	m	class:b
+replace	random/0Ctf2023/nothing_is_true2/exp.py	/^def replace(dst, off, src):$/;"	f
 req	kernel/union2021/exp.c	/^typedef struct req {$/;"	s	file:
 req	kernel/union2021/exp.c	/^} req;$/;"	t	typeref:struct:req	file:
 req_t	kernel/HTB/tictacpwn/exp.c	/^} req_t;$/;"	t	typeref:struct:__anon8931d95c0108	file:
@@ -3941,6 +3995,10 @@ service_exists	kernel/Seccon2021/kone_gadget/initramfs/lib/dhcpcd/dhcpcd-run-hoo
 service_exists	kernel/Seccon2021/kone_gadget/initramfs/lib64/dhcpcd/dhcpcd-run-hooks	/^service_exists()$/;"	f
 service_status	kernel/Seccon2021/kone_gadget/initramfs/lib/dhcpcd/dhcpcd-run-hooks	/^service_status()$/;"	f
 service_status	kernel/Seccon2021/kone_gadget/initramfs/lib64/dhcpcd/dhcpcd-run-hooks	/^service_status()$/;"	f
+set	heap/wacon2023/very_sorry/app.js	/^    ah.prototype.set = function (a, b) {$/;"	m	class:ah
+set	heap/wacon2023/very_sorry/app.js	/^    ax.prototype.set = function (a, b) {$/;"	m	class:ax
+set	heap/wacon2023/very_sorry/rename.js	/^    ah.prototype.set = function (a, b) {$/;"	m	class:ah
+set	heap/wacon2023/very_sorry/rename.js	/^    ax.prototype.set = function (a, b) {$/;"	m	class:ax
 set_addr	kernel/InCtf2021/kqueue/help.py	/^def set_addr(addr, val):$/;"	f
 set_byte	random/hxp2021/zehn/sol1.py	/^            def set_byte(off, b):$/;"	f
 set_cursize	heap_musl/n1ctf2021/xpl.py	/^def set_cursize(idx):$/;"	f
@@ -4114,6 +4172,7 @@ start	kernel/Seccon2021/kone_gadget/initramfs/etc/init.d/S01syslogd	/^start() {$
 start	kernel/Seccon2021/kone_gadget/initramfs/etc/init.d/S02klogd	/^start() {$/;"	f
 start	kernel/Seccon2021/kone_gadget/initramfs/etc/init.d/S02sysctl	/^start() {$/;"	f
 start	kernel/zeropts2022/krce/exp.py	/^def start(argv=[], *a, **kw):$/;"	f
+start	random/0Ctf2023/nothing_is_true2/exp.py	/^def start(argv=[], *a, **kw):$/;"	f
 start	random/balsn2022/senitel/exp.py	/^def start(argv=[], *a, **kw):$/;"	f
 start	random/balsn2023/babypwn2023/exp.py	/^def start(argv=[], *a, **kw):$/;"	f
 start	random/just2022_arm/exp.py	/^def start(argv=[], *a, **kw):$/;"	f
