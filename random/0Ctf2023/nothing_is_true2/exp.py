@@ -120,46 +120,9 @@ class Ehdr32(Structure):
 A memoryview in Python is a built-in type that provides a way to access the memory of other binary objects (like bytes, bytearray, or array.array) without copying. It's a means of working with and manipulating large datasets or binary data structures efficiently and effectively.
 '''
 
-
-'''
-00000040  struct Elf64_ProgramHeader __elf_program_headers[0x2] =
-00000040  {
-00000040      [0x0] =
-00000040      {
-00000040          enum p_type type = PT_LOAD
-00000044          enum p_flags flags = PF_X | PF_R
-00000048          uint64_t offset = 0x1000
-00000050          uint64_t virtual_address = 0x400000
-00000058          uint64_t physical_address = 0x400000
-00000060          uint64_t file_size = 0x4b
-00000068          uint64_t memory_size = 0x4b
-00000070          uint64_t align = 0x1000
-00000078      }
-00000078      [0x1] =
-00000078      {
-00000078          enum p_type type = PT_LOAD
-0000007c          enum p_flags flags = PF_W | PF_R
-00000080          uint64_t offset = 0x2000
-00000088          uint64_t virtual_address = 0x37331000
-00000090          uint64_t physical_address = 0x37331000
-00000098          uint64_t file_size = 0x5
-000000a0          uint64_t memory_size = 0x5
-000000a8          uint64_t align = 0x1000
-000000b0      }
-000000b0  }
-'''
-
 def replace(dst, off, src):
     for i in range(off, off + len(src), 1):
         dst[i] = src[i - off]
-
-    '''
-    a = dst[:off]
-    b = src
-    c = dst[off+len(src):]
-
-    return a + b + c
-    '''
 
 assert(sizeof(Ehdr64) == 0x40)
 assert(sizeof(Ehdr32) == 0x34)
@@ -169,14 +132,17 @@ os.system("./compile.sh")
 
 exp = bytearray(open("exp", "rb").read())
 
-#code = Phdr64.from_buffer(memoryview(exp)[0x40:0x40+sizeof(Phdr64)])
-#code.p_flags = 7
 phdrs = exp[0x40:0x40+sizeof(Phdr64)*4]
 
 replace(exp, 0x80, phdrs)
 
-#code64_phdr = Phdr64.from_buffer(memoryview(exp)[0x80+sizeof(Phdr64)*2:])
-#code_phdr.p_flags = 7
+'''
+exp: ELF 32-bit LSB executable, x86-64, version 1 (SYSV), corrupted program header size, no section header
+
+e_ident[EI_CLASS] indicates 32 bit, however e_machine is AMD x86-64
+
+=> Linux will execute this as a 64 bit binary still
+'''
 
 header_32 = Ehdr32.from_buffer(memoryview(exp))
 header_32.e_ehsize = 0x34
