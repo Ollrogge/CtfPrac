@@ -30,8 +30,7 @@ _code64:
     mov rax, 0x2
     call _sys64
 
-    ; retf: pops first offset, then segment
-
+    ; retf: first eip, then segment descriptor
     mov rax, _code32
     push rax
     mov dword [rsp + 4], 0x23
