@@ -1,0 +1,6 @@
+[package]
+name = "blazing_fast_workout_planner"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]

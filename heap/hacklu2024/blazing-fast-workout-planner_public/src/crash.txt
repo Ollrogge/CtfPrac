@@ -1,0 +1,38 @@
+Exercise added: Exercise { name: [], description: [0, 255, 49] }
+Workout: Workout { exercises: [RepeatN { count: 0, element: ManuallyDrop { value: Exercise { name: [], description: [0, 255, 49] } } }] }
+Exercise added: Exercise { name: [], description: [49] }
+Exercise added: Exercise { name: [], description: [] }
+Exercise added: Exercise { name: [], description: [0, 8, 1, 1, 49] }
+Workout: Workout { exercises: [RepeatN { count: 1, element: ManuallyDrop { value: Exercise { name: [], description: [0, 8, 1, 1, 49] } } }, RepeatN { count: 1, element: ManuallyDrop { value: Exercise { name: [], description: [0, 8, 1, 1, 49] } } }, RepeatN { count: 1, element: ManuallyDrop { value: Exercise { name: [], description: [0, 8, 1, 1, 49] } } }, RepeatN { count: 3, element: ManuallyDrop { value: Exercise { name: [], description: [0, 8, 1, 1, 49] } } }] }
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+
+ID ACCESSED: 1
+
+
+***MY**
+EXERCISE ADDED: Exercise { name: [], description: [0, 255, 49] }
+WORKOUT: Workout { exercises: [] }\n'
+EXERCISE ADDED: Exercise { name: [], description: [49] }
+EXERCISE ADDED: Exercise { name: [], description: [] }
+EXERCISE ADDED: Exercise { name: [], description: [0, 8, 1, 1, 49] }
+WORKOUT EXERCISE AMOUNT: 7
+WORKOUT: Workout { exercises: [RepeatN { count: 1, element: ManuallyDrop { value: Exercise { name: [], description: [0, 8, 1, 1, 49] } } }, RepeatN { count: 1, element: ManuallyDrop { value: Exercise { name: [], description: [0, 8, 1, 1, 49] } } }, RepeatN { count: 1, element: ManuallyDrop { value: Exercise { name: [], description: [0, 8, 1, 1, 49] } } }, RepeatN { count: 3, element: ManuallyDrop { value: Exercise { name: [], description: [0, 8, 1, 1, 49] } } }] }
+
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 0
+ID ACCESSED: 1
