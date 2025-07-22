@@ -1,0 +1,9 @@
+services:
+  chall:
+    platform: linux/amd64
+    build: .
+    restart: unless-stopped
+    init: true
+    privileged: true
+    ports:
+      - "1337:1337"
