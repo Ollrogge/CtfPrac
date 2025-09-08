@@ -1,0 +1,11 @@
+---
+services:
+  trusted:
+    image: trusted
+    build: .
+    read_only: true
+    privileged: true
+    ports:
+      - 1337:1337
+    environment:
+      FLAG: snakeCTF{placeholder}
