@@ -1,0 +1,21 @@
+services:
+  chall:
+    container_name: pwnshop_chall
+    image: cybersecnatlab/challenge-jail:staging-ubuntu-jammy@sha256:353d96d97db50e2f24c5f2d998467136b44d1e5f0bfc583b8c88c51b1886f347
+    restart: unless-stopped
+    init: true
+    privileged: true
+    ports:
+      - '5555:1337'
+    volumes:
+      - './chall:/home/user/chall:ro' # Challenge executable
+      - './banner.txt:/home/user/banner.txt:ro' # banner file
+      - './libc.so.6:/opt/glibc-2.42/lib/libc.so.6:ro'  # libc 2.42
+      - './ld-linux-x86-64.so.2:/opt/glibc-2.42/lib/ld-linux-x86-64.so.2:ro'  # ld for libc
+
+    command: ["/opt/glibc-2.42/lib/ld-linux-x86-64.so.2", "--library-path", "/opt/glibc-2.42/lib/libc.so.6", "/home/user/chall"]
+    environment:
+      - 'FLAG_IN_ENV=true'                         
+      - 'POW_BITS=26'                               
+      - 'TIMEOUT=90'
+      - 'FLAG=ptm{TESTFLAG}'
